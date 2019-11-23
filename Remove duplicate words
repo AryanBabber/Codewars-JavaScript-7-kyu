@@ -18,3 +18,17 @@ function removeDuplicateWords (s) {
   let unique = [...new Set(names)];
   return unique.join(" ")
 }
+
+
+
+
+
+function removeDuplicateWords (s) {
+ unique = []
+   var x = s.split(" ")
+   for(var i = 0; i < x.length; i++){
+   if(!unique.includes(x[i]))
+   unique.push(x[i])
+   }
+ return unique.join(" ")
+}
