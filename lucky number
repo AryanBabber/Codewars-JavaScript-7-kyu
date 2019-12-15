@@ -16,3 +16,13 @@ function isLucky(n) {
    if((x==0) || (x%9==0)) return true
    return false
 }
+
+
+
+
+
+function isLucky(n) {
+  var x = n.toString().split("").map(Number).reduce(function(a,b){return a+b})
+  if(x%9==0) return true
+  return false
+}
