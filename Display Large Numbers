@@ -1,0 +1,34 @@
+In some locales (like the US) large numbers are displayed with commas every 3 digits to help users understand the size of the number at a glance.
+
+You're going to write a function to format a number for display in that way.
+
+For example:
+
+displayLargeNumber(1234); // "1,234"
+displayLargeNumber(1234567); // "1,234,567"
+It should also work for string inputs that contain numbers:
+
+displayLargeNumber("1234"); // "1,234"
+This exercise can be great practice for off-by-one errors. For the full benefit, try not to use the test suite too much. Think through your input and iteration carefully instead.
+
+Also, the best practice for this in real life would probably be to use toLocaleString. I can't stop you from "cheating", but the spirit of this task is to do the parsing yourself.
+
+
+
+
+
+function displayLargeNumber(n) {
+  return n.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
+
+
+
+Notes to self:
+There are many different ways of printing an integer with a comma as a thousands separators in JavaScript.
+
+One of the simplest ways is to use String.prototype.replace() function with the following arguments:
+
+regular expression: (?=(\d{3})+(?!\d))
+replacement value: $1,
+Regular expression matches a single digit \d followed by a three-digit sets only (?=(\d{3})+(?!\d)). The matched digit is then replaced with $1,. The $1 is a special replacement pattern which holds a value of the first parenthesized sub-match string (in our case it is the matched digit). The , (comma) character is our separator character. We could use . to get number in the following format, e.g., XXX.XXX.XXX. Note that some countries use . (dot) as a thousands separator.
