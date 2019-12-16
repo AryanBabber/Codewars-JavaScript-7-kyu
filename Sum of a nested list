@@ -1,0 +1,18 @@
+Implement a function to calculate the sum of the numerical values in a nested list. For example :
+
+sumNested([1, [2, [3, [4]]]]) => 10
+
+
+
+
+
+const sumNested = arr => {
+  var sum = 0
+  var x = arr.toString().split(",").map(Number)
+    for(var i=0;i<x.length;i++){
+    if(Number.isInteger(x[i])){
+    sum+=x[i]
+    }
+  }
+  return sum
+};
