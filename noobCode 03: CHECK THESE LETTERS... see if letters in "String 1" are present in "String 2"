@@ -1,0 +1,24 @@
+Write a function that checks if the letters in the second string are present in the first:
+
+letterCheck(["trances", "nectar"]) // true
+letterCheck(["compadres", "DRAPES"]) // true
+letterCheck(["parses", "parsecs"]) //false
+Function should not be case sensitive, as indicated in example #2. Note: both strings are presented as a single argument in the form of an array.
+
+
+
+
+
+function letterCheck(arr) {
+  var arr1 = []
+  var arr2 = []
+  arr1.push(arr[0])
+  arr2.push(arr[1])
+  var x = arr1.toString().toLowerCase().split("").sort()
+  var y = arr2.toString().toLowerCase().split("").sort()
+    for(var i=0;i<y.length;i++){
+    if(x.indexOf(y[i]) === -1)
+       return false
+    }
+  return true
+}
