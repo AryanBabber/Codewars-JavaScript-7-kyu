@@ -1,0 +1,20 @@
+Complete the function that returns the color of the given square on a normal, 8x8 chess board:
+
+chessboard
+
+Examples
+"a", 8  ==>  "white"
+"b", 2  ==>  "black"
+"f", 5  ==>  "white"
+
+
+
+
+
+function mineColor(file, rank) {
+  if (file =="a"|| file =="c"|| file == "e"|| file == "g") {
+    return rank % 2 == 1 ? 'black' : 'white';
+  } else {
+    return rank % 2 == 0 ? 'black' : 'white';
+  }
+}
