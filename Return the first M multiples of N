@@ -1,0 +1,28 @@
+Implement a function, multiples(m, n), which returns an array of the first m multiples of the real number n. Assume that m is a positive integer.
+
+Ex.
+
+multiples(3, 5)
+should return
+
+vec![5, 10, 15]
+
+
+
+
+
+function multiples(m, n){
+  var result = []
+    if(n>0){
+    for(var i=n;i<=m*n;i++){
+      if(i%n==0) result.push(i)
+      }
+    }
+    
+    if(n<0){
+    for(var i=n;i>=m*n;i--){
+      if(i%n==0) result.push(i)
+      }
+    }
+    return result
+}
