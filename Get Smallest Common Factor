@@ -1,0 +1,19 @@
+Given an array of integers, return the smallest common factors of all integers in the array.
+
+When i say Smallest Common Factor i mean the smallest number above 1 that can divide all numbers in the array without a remainder.
+
+scf([200, 30, 18, 8, 64, 34]) //=> 2
+scf([21, 45, 51, 27, 33]) //=> 3
+scf([133, 147, 427, 266]) //=> 7
+If there's no common factors above 1, return 1 (technically 1 is always a common factor).
+
+
+
+
+
+function scf(array){
+  array = array.sort(function(a,b){return a-b})
+  for(var i=2;i<array[array.length-1];i++){
+    if(array[0]%i==0 && array[1]%i==0 && array[2]%i==0 && array[3]%i==0 && array[4]%i==0 && array[5]%i==0) return i
+    }
+}
