@@ -47,3 +47,10 @@ function automorphic(n){
     if(n!=Number(y)) return 'Not!!'
   return 'Automorphic'
 }
+
+
+
+
+function automorphic(n){
+  return Math.pow(n,2).toString().endsWith(n) ? "Automorphic":"Not!!"
+}
