@@ -20,3 +20,14 @@ function hammingDistance(a,b){
       }
   return counter
 }
+
+
+
+
+function hammingDistance(a,b){
+  var counter = 0
+  for(var i=0;i<a.length;i++){
+    if(a[i]!=b[i]) counter++
+    }
+  return counter
+}
