@@ -9,3 +9,12 @@ function average(scores) {
    var y = scores.reduce(function(a,b){return a+b})
    return Math.round(y/x)
 }
+
+
+
+
+
+
+function average(scores) {
+  return parseInt(((scores.reduce(function(a,b){return a+b}))/scores.length).toFixed())
+}
