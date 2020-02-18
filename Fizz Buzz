@@ -24,3 +24,22 @@ function fizzbuzz(n){
  }
 return fizz
 }
+
+
+
+
+
+
+function fizzbuzz(n){
+  const fizzHash = {3:'Fizz', 5:'Buzz'}
+  var fizz = []
+  for (var i = 1;i<=n;i++){
+    let output = ''
+    for (var num in fizzHash) {
+      if (i % num === 0) {output += fizzHash[num]}
+    }
+    if (output === '') {output = i}
+    fizz.push(output)
+  }
+  return fizz
+}
