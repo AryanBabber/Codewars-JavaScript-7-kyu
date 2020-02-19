@@ -27,3 +27,21 @@ function outed(meet, boss){
   if(result<=5) return 'Get Out Now!'
   return 'Nice Work Champ!'
 }
+
+
+
+
+
+
+describe('outed', function(){
+
+describe('test1', function(){
+  it('can calculate happiness rating',function(){
+    expect(outed
+      ({'tim':0, 'jim':2, 'randy':0, 'sandy':7, 'andy':0, 'katie':5, 'laura':1, 'saajid':2, 'alex':3, 'john':2, 'mr':0}, 'laura')).toBe('Get Out Now!')
+
+    expect(outed
+      ({'tim':1, 'jim':3, 'randy':9, 'sandy':6, 'andy':7, 'katie':6, 'laura':9, 'saajid':9, 'alex':9, 'john':9, 'mr':8}, 'katie')).toBe('Nice Work Champ!')
+    })
+  })
+})
