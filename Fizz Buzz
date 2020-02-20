@@ -43,3 +43,12 @@ function fizzbuzz(n){
   }
   return fizz
 }
+
+
+
+describe('FizzBuzz', function(){
+  it('should fizzify numbers correctly',function(){
+    expect(fizzbuzz(3)).toEqual([1,2,'Fizz'])
+    expect(fizzbuzz(10)).toEqual([1,2,'Fizz',4,'Buzz','Fizz',7,8,'Fizz','Buzz'])
+    })
+  })
