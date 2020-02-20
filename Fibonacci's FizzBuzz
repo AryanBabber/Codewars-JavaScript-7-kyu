@@ -47,3 +47,12 @@ var fibsFizzBuzz = function(n) {
      fib.shift()
    return fib
 }
+
+
+
+describe('fibsFizzBuzz', function(){
+  it('should fizzify numbers correctly',function(){
+    expect(fibsFizzBuzz(2)).toEqual([1,1])
+    expect(fibsFizzBuzz(5)).toEqual([ 1, 1, 2, 'Fizz', 'Buzz' ])
+    })
+  })
