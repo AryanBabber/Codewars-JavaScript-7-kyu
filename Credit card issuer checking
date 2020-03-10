@@ -36,3 +36,16 @@ function getIssuer(number) {
    return "VISA"
    return "Unknown"
 }
+
+
+
+Tests:
+
+describe('getIssuer', function(){
+  it('should determine the card issuer',function(){
+    expect(getIssuer(4111111111111111)).toEqual("VISA")
+    expect(getIssuer(378282246310005)).toEqual("AMEX")
+    expect(getIssuer(9111111111111111)).toEqual("Unknown")
+    expect(getIssuer(5105105105105106)).toEqual("Mastercard")
+    })
+  })
