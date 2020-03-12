@@ -1,0 +1,50 @@
+You are going to be given a word. Your job will be to make sure that each character in that word has the exact same number of occurrences. You will return true if it is valid, or false if it is not.
+
+For example:
+
+"abcabc" is a valid word because 'a' appears twice, 'b' appears twice, and'c' appears twice.
+"abcabcd" is NOT a valid word because 'a' appears twice, 'b' appears twice, 'c' appears twice, but 'd' only appears once! "123abc!" is a valid word because all of the characters only appear once in the word.
+
+For this kata, capitals are considered the same as lowercase letters. Therefore: 'A' == 'a' .
+
+#Input A string (no spaces) containing [a-z],[A-Z],[0-9] and common symbols. The length will be 0 < string < 100.
+
+#Output true if the word is a valid word, or false if the word is not valid.
+
+
+
+
+
+function validateWord(s){
+  var s = s.toLowerCase()
+  var counts = {}
+  var check = []
+  for(var i=0;i<s.length;i++){
+    var char = s.charAt(i)
+    if(counts[char]){
+    counts[char]++
+    } else {
+    counts[char] = 1
+    }
+  }
+    for(var value in counts){
+    check.push(counts[value])
+    }
+    for(var i=0;i<check.length-1;i++){
+    if(check[i]!=check[i+1]) return false
+    }
+  return true
+}
+
+
+
+
+Tests:
+
+describe('validateWord', function(){
+  it('checks that each char in a word has the same number of occurrences',function(){
+    expect(validateWord('abcabc')).toEqual(true)
+    expect(validateWord('abcddd')).toEqual(false)
+    expect(validateWord('AABbcc')).toEqual(true)
+    })
+  })
