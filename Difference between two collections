@@ -1,0 +1,40 @@
+Find the difference between two collections. The difference means that either the character is present in one collection or it is present in other, but not in both. Return a sorted set with difference.
+
+The collections can contain any character and can contain duplicates.
+
+For instance:
+
+A = [a,a,t,e,f,i,j]
+
+B = [t,g,g,i,k,f]
+
+difference = [a,e,g,j,k]
+
+
+
+
+function diff(a, b){
+  var result = []
+  var final = []
+    for(var i = 0;i < a.length;i++){
+    if(b.indexOf(a[i])==-1) result.push(a[i])
+    }
+    for(var i = 0;i < b.length;i++){
+    if(a.indexOf(b[i])==-1) result.push(b[i])
+    }
+    for(var i = 0;i < result.length;i++){
+    if(!final.includes(result[i])) final.push(result[i])
+    }
+  return final.sort()
+}
+
+
+
+Tests:
+
+describe('diff', function(){
+  it('returns the difference between 2 collections',function(){
+    expect(diff(['a','b'], ['a','b','c'])).toEqual(['c'])
+    expect(diff(['a'], ['a',])).toEqual([])
+    })
+  })
