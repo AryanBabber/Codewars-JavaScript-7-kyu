@@ -17,3 +17,35 @@ Array.prototype.numberOfOccurrences = function(search) {
 },0)
 return count
 }
+
+
+
+
+Alternative solution with loop:
+
+Array.prototype.numberOfOccurrences = function(search) {
+  var counter = 0
+  for(var i=0; i < this.length; i++) {
+    if(this[i] == search) {
+      counter++
+    }
+  }
+  return counter
+}
+
+
+
+
+
+
+Tests used:
+
+var arr = [0, 1, 2, 2, 3]
+
+describe('numberOfOccurrences', function(){
+  it('returns the number of occurrences of an element',function(){
+    expect(arr.numberOfOccurrences(0)).toEqual(1)
+    expect(arr.numberOfOccurrences(4)).toEqual(0)
+    expect(arr.numberOfOccurrences(2)).toEqual(2)
+    })
+  })
