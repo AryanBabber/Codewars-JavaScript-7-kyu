@@ -1,0 +1,33 @@
+Bob is a lazy man.
+
+He needs you to create a method that can determine how many letters and digits are in a given string.
+
+Example:
+
+"hel2!lo" --> 6
+
+"wicked .. !" --> 6
+
+"!?..A" --> 1
+
+
+
+
+
+function countLettersAndDigits(input) {
+  input = input.replace(/[^A-Za-z0-9]/g, '');
+  return input.length
+}
+
+
+
+
+Tests used:
+
+describe('countLettersAndDigits', function(){
+  it('counts how many letters and digits are in a given string',function(){
+    expect(countLettersAndDigits("hel2!lo")).toEqual(6)
+    expect(countLettersAndDigits("?")).toEqual(0)
+    expect(countLettersAndDigits("aBcDeFg090")).toEqual(10)
+    })
+  })
