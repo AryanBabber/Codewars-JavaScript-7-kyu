@@ -1,0 +1,36 @@
+Given a 2D array of size m * n. Your task is to find the sum of minimum value in each row.
+
+For Example:
+
+[
+  [1, 2, 3, 4, 5],       // minimum value of row is 1
+  [5, 6, 7, 8, 9],       // minimum value of row is 5
+  [20, 21, 34, 56, 100]  // minimum value of row is 20
+]
+So, the function should return 26 because sum of minimums is as 1 + 5 + 20 = 26
+
+Note: You will be always given non-empty array containing Positive values.
+
+
+
+
+
+function sumOfMinimums(arr) {
+  var result = []
+    result.push(arr.map(function(row){return Math.min.apply(Math, row)}))
+    result = result.reduce(function(a,b){return a.concat(b)})
+    return result.reduce(function(a,b){return a+b})
+}
+
+
+
+
+Tests used: 
+
+describe('sumOfMinimums', function(){
+  it('returns the sum of minimum value in each array row',function(){
+    expect(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]])).toEqual(9)
+    expect(sumOfMinimums([[0, 1, 2], [2, 3, 4], [4, 5, 6]])).toEqual(6)
+    expect(sumOfMinimums([[2, 2, 2], [8, 9, 9]])).toEqual(10)
+    })
+  })
