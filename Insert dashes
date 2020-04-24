@@ -1,0 +1,35 @@
+Write a function insertDash(num)/InsertDash(int num) that will insert dashes ('-') between each two odd numbers in num. For example: if num is 454793 the output should be 4547-9-3. Don't count zero as an odd number.
+
+Note that the number will always be non-negative (>= 0).
+
+
+
+
+
+function insertDash(num) {
+   var result = []
+    num = num.toString().split('').map(Number)
+    for(var i=0;i<num.length;i++){
+    if(num[i] % 2 !== 0 && num[i+1] % 2 !== 0){
+      result.push(num[i])
+      result.push('-')
+      }
+    else {
+      result.push(num[i])
+      }
+    }
+    if(result[result.length-1]=='-') result.pop()
+    return result.join("")
+}
+
+
+
+Tests used:
+
+describe('insertDash', function(){
+  it('returns num with dashes between odd numbers',function(){
+    expect(insertDash(454793)).toEqual('4547-9-3')
+    expect(insertDash(1003567)).toEqual('1003-567')
+    expect(insertDash(123456789)).toEqual('123456789')
+    })
+  })
