@@ -1,0 +1,27 @@
+Your task in this kata is to implement a function that calculates the sum of the integers inside a string. For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
+
+
+
+
+
+function sumOfIntegersInString(s){
+  var sum = 0
+    s = s.split(/([0-9]+)/)
+    s = s.map(Number)
+    for(var i=0;i<s.length;i++){
+      if(Number.isInteger(s[i])) sum+= (s[i])
+    }
+  return sum
+}
+
+
+
+Tests used:
+
+describe('sumOfIntegersInString', function(){
+  it('returns the sum of the integers inside a string',function(){
+    expect(sumOfIntegersInString("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog")).toEqual(3635)
+    expect(sumOfIntegersInString("C4t5 are 4m4z1ng.")).toEqual(18)
+    expect(sumOfIntegersInString("1929 to 1939.")).toEqual(3868)
+    })
+  })
