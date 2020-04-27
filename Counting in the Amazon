@@ -1,0 +1,42 @@
+The Arara are an isolated tribe found in the Amazon who count in pairs. For example one to eight is as follows:
+
+1 = anane
+2 = adak
+3 = adak anane
+4 = adak adak
+5 = adak adak anane
+6 = adak adak adak
+7 = adak adak adak anane
+8 = adak adak adak adak
+
+Take a given number and return the Arara's equivalent.
+
+e.g.
+
+countArara(3) 'adak anane'
+
+countArara(8) 'adak adak adak adak'
+
+
+
+
+
+function countArara(n) {
+  const two = "adak "
+    if(n==1) return "anane"
+    if(n % 2 == 0) return two.repeat([n/2]).trim()
+    return two.repeat([n/2])+"anane"
+}
+
+
+
+Tests used:
+
+describe('countArara', function(){
+  it('returns the correct phrase',function(){
+    expect(countArara(1)).toEqual("anane")
+    expect(countArara(3)).toEqual("adak anane")
+    expect(countArara(6)).toEqual("adak adak adak")
+    expect(countArara(18)).toEqual("adak adak adak adak adak adak adak adak adak")
+    })
+  })
