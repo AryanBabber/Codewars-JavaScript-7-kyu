@@ -1,0 +1,36 @@
+Description:
+Remove all exclamation marks from the end of words. Words are separated by spaces in the sentence.
+
+Examples
+remove("Hi!") === "Hi"
+remove("Hi!!!") === "Hi"
+remove("!Hi") === "!Hi"
+remove("!Hi!") === "!Hi"
+remove("Hi! Hi!") === "Hi Hi"
+remove("!!!Hi !!hi!!! !hi") === "!!!Hi !!hi !hi"
+
+
+
+
+
+function remove(s){
+  var words = []
+  words = s.split(" ")
+    for(var i=0;i<words.length;i++){
+      while(words[i].slice(-1)=="!") words[i]=words[i].slice(0,-1)
+    }
+  return words.join(" ")
+}
+
+
+
+Tests used:
+
+describe('remove', function(){
+  it('returns string with exclamation marks removed',function(){
+    expect(remove("Hi!")).toEqual("Hi")
+    expect(remove("Hi!!!")).toEqual("Hi")
+    expect(remove("!Hi")).toEqual("!Hi")
+    expect(remove("Hi! Hi!")).toEqual("Hi Hi")
+    })
+  })
