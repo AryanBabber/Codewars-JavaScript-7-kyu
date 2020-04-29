@@ -1,0 +1,28 @@
+Given a string made of digits [0-9], return a string where each digit is repeated a number of times equals to its value.
+
+Examples
+Digits.Explode("312") = "333122"
+Digits.Explode("102269") = "12222666666999999999"
+
+
+
+
+
+function explode(s) {
+  var result = ""
+  for(var i=0;i<s.length;i++){
+    result+=s[i].repeat(parseInt(s[i]))
+  }
+  return result
+}
+
+
+
+Tests used:
+
+describe('explode', function(){
+  it('return a string where each digit is repeated a number of times',function(){
+    expect(explode("312")).toEqual("333122")
+    expect(explode("102269")).toEqual("12222666666999999999")
+    })
+  })
