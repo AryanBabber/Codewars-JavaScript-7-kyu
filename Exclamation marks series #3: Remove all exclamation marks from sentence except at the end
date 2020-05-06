@@ -1,0 +1,40 @@
+Description:
+Remove all exclamation marks from sentence except at the end.
+
+Examples
+remove("Hi!") == "Hi!"
+remove("Hi!!!") == "Hi!!!"
+remove("!Hi") == "Hi"
+remove("!Hi!") == "Hi!"
+remove("Hi! Hi!") == "Hi Hi!"
+remove("Hi") == "Hi"
+
+
+
+
+
+function remove(s){
+  var result = ''
+    for(var i=s.length-1;i>0;i--){
+    if(s[i]==("!")) {
+      result+=s[i]
+  } else {
+    break
+  }
+}
+  return s.split("!").join("")+result
+}
+
+
+
+Tests used:
+
+describe('remove', function(){
+  it('Remove all exclamation marks from sentence except at the end',function(){
+    expect(remove("Hi!")).toEqual("Hi!")
+    expect(remove("Hi!!!")).toEqual("Hi!!!")
+    expect(remove("!Hi!")).toEqual("Hi!")
+    expect(remove("Hi")).toEqual("Hi")
+    expect(remove("Hi! Hi!")).toEqual("Hi Hi!")
+    })
+  })
