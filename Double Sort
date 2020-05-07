@@ -1,0 +1,35 @@
+Simple enough this one - you will be given an array. The values in the array will either be numbers or strings, or a mix of both. You will not get an empty array, nor a sparse one.
+
+Your job is to return a single array that has first the numbers sorted in ascending order, followed by the strings sorted in alphabetic order. The values must maintain their original type.
+
+Note that numbers written as strings are strings and must be sorted with the other strings.
+
+
+
+
+
+function dbSort(a){
+  var numbers = []
+  var letters = []
+    for(var i=0;i<a.length;i++){
+    if(Number.isInteger(a[i])) numbers.push(a[i])
+    }
+    numbers.sort(function(a,b){return a-b})
+      for(var i=0;i<a.length;i++){
+      if(typeof a[i] === 'string') letters.push(a[i])
+      }
+      letters.sort()
+    return (numbers.concat(letters))
+}
+
+
+
+Tests used:
+
+describe('dbSort', function(){
+  it('returns a single sorted array',function(){
+    expect(dbSort([6, 2, 3, 4, 5])).toEqual([2, 3, 4, 5, 6])
+    expect(dbSort([14, 32, 3, 5, 5])).toEqual([3, 5, 5, 14, 32])
+    expect(dbSort(["Banana", "Orange", "Apple", "Mango", 0, 2, 2])).toEqual([0,2,2,"Apple","Banana","Mango","Orange"])
+    })
+  })
