@@ -19,7 +19,26 @@ function dbSort(a){
       if(typeof a[i] === 'string') letters.push(a[i])
       }
       letters.sort()
-    return (numbers.concat(letters))
+    return numbers.concat(letters)
+}
+
+
+
+
+
+function dbSort(a){
+  var numbers = []
+  var letters = []
+  for(var i=0;i<a.length;i++){
+    if(Number.isInteger(a[i])){
+      numbers.push(a[i])
+    } else {
+      letters.push(a[i])
+    }
+  }
+  numbers.sort(function (a,b) {return a-b})
+  letters.sort()
+  return numbers.concat(letters)
 }
 
 
