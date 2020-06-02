@@ -1,0 +1,28 @@
+Instructions
+Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+
+Example
+Test.assertSimilar( capitals('CodEWaRs'), [0,3,4,6] );
+
+
+
+
+
+var capitals = function (word) {
+	var result = []
+  letters = word.split("")
+    for(var i=0;i<letters.length;i++){
+    if(letters[i]==letters[i].toUpperCase()){
+      result.push(i)
+      }
+    }
+  return result
+};
+
+
+
+describe('capitals', function(){
+  it('returns the indexes of all the capital letters in the string',function(){
+    expect(capitals('CodEWaRs')).toEqual([0,3,4,6])
+    })
+  })
