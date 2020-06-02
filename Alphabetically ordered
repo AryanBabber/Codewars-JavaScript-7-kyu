@@ -1,0 +1,29 @@
+Your task is very simple. Just write a function isAlphabetic(s), which takes an input string s in lowercase and returns true/false depending on whether the string is in alphabetical order or not.
+
+For example, isAlphabetic('kata') is False as 'a' comes after 'k', but isAlphabetic('ant') is True.
+
+Good luck :)
+
+
+
+
+
+function alphabetic(s){
+  var order = s.split("").sort().join("")
+  if(s==order){
+    return true
+  }
+  return false
+}
+
+
+
+describe('alphabetic', function(){
+  it(' determines whether the string is in alphabetical order',function(){
+    expect(alphabetic('abc')).toEqual(true)
+    expect(alphabetic('zxy')).toEqual(false)
+    expect(alphabetic('z')).toEqual(true)
+    expect(alphabetic('cell')).toEqual(true)
+    expect(alphabetic('codewars')).toEqual(false)
+    })
+  })
