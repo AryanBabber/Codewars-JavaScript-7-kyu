@@ -1,0 +1,38 @@
+ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+If the function is passed a valid PIN string, return true, else return false.
+
+eg:
+
+validatePIN("1234") === true
+validatePIN("12345") === false
+validatePIN("a234") === false
+
+
+
+
+
+function validatePIN (pin) {
+  var pattern1 = /^\d{4}$/
+  var pattern2 = /^\d{6}$/
+  if(pin.match(pattern1)||pin.match(pattern2)){
+    return true
+  }
+  return false
+}
+
+
+
+Tests used:
+
+describe('validatePIN', function(){
+  it('allows 4 or 6 digit PIN codes',function(){
+    expect(validatePIN("1234")).toBe(true)
+    expect(validatePIN("123456")).toBe(true)
+    expect(validatePIN("123")).toBe(false)
+    expect(validatePIN("abc123")).toBe(false)
+    expect(validatePIN("abcd")).toBe(false)
+    })
+  })
+  
+  
