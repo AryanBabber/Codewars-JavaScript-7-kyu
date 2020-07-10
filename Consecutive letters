@@ -1,0 +1,37 @@
+In this Kata, we will check if a string contains consecutive letters as they appear in the English alphabet and if each letter occurs only once.
+
+For example: 
+solve("abc") = True, because it contains a,b,c
+solve("abd") = False, because a, b, d are not consecutive, and c is missing.
+solve("dabc") = True, because it contains a, b, c, d
+solve("abbc") = False, because b does not occur once.
+solve("v") = True
+All inputs will be lowercase letters.
+
+
+
+
+
+function solve(s){
+  var sorted = s.split("").sort().join("")
+  console.log(sorted)
+  for(var i=0;i<sorted.length-1;i++){
+    if(sorted.charCodeAt(i+1) - sorted.charCodeAt(i) !== 1){
+      return false
+    }
+  }
+  return true
+}
+
+
+
+Tests used:
+
+describe('solve', function(){
+  it('checks for consecutive letters',function(){
+    expect(solve("abc")).toEqual(true)
+    expect(solve("abd")).toEqual(false)
+    expect(solve("dabc")).toEqual(true)
+    expect(solve("abbc")).toEqual(false)
+    })
+  })
