@@ -1,0 +1,29 @@
+When given a string of space separated words, return the word with the longest length. If there are multiple words with the longest length, return the last instance of the word with the longest length.
+
+Example:
+
+'red white blue' //returns string value of white
+
+'red blue gold' //returns gold
+
+
+
+
+
+function longestWord(stringOfWords){
+  var reverse = stringOfWords.split(" ").reverse()
+  var split = reverse.sort(function(a,b){return b.length-a.length})
+  return split[0]
+}
+
+
+
+Tests used:
+
+describe('longestWord', function(){
+  it('returns the longest word',function(){
+    expect(longestWord("a b c d e fgh")).toEqual("fgh")
+    expect(longestWord("one two three")).toEqual("three")
+    expect(longestWord("red blue grey")).toEqual("grey")
+    })
+  })
