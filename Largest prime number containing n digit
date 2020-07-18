@@ -1,0 +1,36 @@
+largest(1); //Should return 7
+largest(2); //Should return 97
+....
+Do not mind the pattern as it is just an incident ! And make sure to return false if the input is not an integer :D This might seem simple at first, it is, but keep an eye on the performance. Go for it !
+
+
+
+
+
+function prime(n){
+  for(var i=2;i<n;i++){
+    if(n % i == 0) return false
+  }
+  return true
+}
+
+function largest(n){
+  if(!Number.isInteger(n)|| n < 1) return false
+  var x = Math.pow(10, n)
+  while(!prime(x))
+  x--
+  return x
+}
+
+
+
+Tests used:
+
+describe('largest', function(){
+  it('returns the largest prime number containing n', function(){
+    expect(largest(0)).toEqual(false)
+    expect(largest(1)).toEqual(7)
+    expect(largest(2)).toEqual(97)
+    expect(largest(3)).toEqual(997)
+  })
+})
