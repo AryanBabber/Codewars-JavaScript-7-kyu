@@ -1,0 +1,50 @@
+Your task is to take a given range and return an array of the prime numbers in that range.
+
+You will write a function with the following parameters:
+
+start is the integer from which your range starts.
+
+end is the integer at which your range ends.
+
+If the range does not contain any prime numbers return null.
+
+Examples:
+
+primes(5, 7)  // [5, 7]
+primes(8, 9)  // null
+primes(1, 10) // [2, 3, 5, 7]
+You can assume that parameters numbers will be positive integers and that the start of the range will be less than the end of the range.
+
+
+
+
+
+function primes(start, end){
+  var result = []
+  function prime(n){
+    for(var i=2;i<n;i++){
+      if(n % i == 0) return false
+    }
+    return true
+  }
+
+  if(start == 1) start += 1
+  for(var i=start;i<=end;i++){
+    if(prime(i)) result.push(i)
+    }
+  if(result.length > 0){
+    return result
+    }
+    return null
+  }
+  
+  
+  
+  Tests used:
+  
+  describe('primes', function(){
+  it('returns an array of primes numbers',function(){
+    expect(primes(1, 10)).toEqual([2, 3, 5, 7])
+    expect(primes(8, 10)).toEqual(null)
+    })
+  })
