@@ -17,3 +17,7 @@ function filter_list(l) {
   }
   return integers
 }
+
+--------------------------- Another way can be: ---------------------
+
+const filter_list = (l) => l.filter(a=>Number.isInteger(a))
